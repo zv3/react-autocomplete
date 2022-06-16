@@ -98,7 +98,7 @@ function Autocomplete({ onChange, options, searchText, placeholder, onSelect }: 
     setIsExpanded(!isExpanded); // Display/hide the menu when clicking on the input box.
   };
 
-  return (<div className="autocomplete">
+  return (<div className="autocomplete" data-testid="autocomplete">
     <Input
       id={id}
       value={searchText}

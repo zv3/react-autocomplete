@@ -22,6 +22,7 @@ function Input({ id, value, expanded: isExpanded, placeholder, onClick, onChange
         aria-autocomplete="list"
         aria-controls={`autocomplete-menu-${id}`}
         aria-expanded={isExpanded}
+        data-testid="autocomplete-input"
         onChange={onChange}
         onClick={onClick}
         onKeyDown={onKeyDown}
