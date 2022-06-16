@@ -1,8 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Autocomplete, { AutocompleteInputProps } from './components/Autocomplete/Autocomplete';
-import App from './App';
 import userEvent from '@testing-library/user-event';
+import Autocomplete, { AutocompleteInputProps } from './components/Autocomplete/Autocomplete';
 
 function renderAutocomplete(props: Partial<AutocompleteInputProps> = {}) {
   const defaultProps: AutocompleteInputProps = {
@@ -27,9 +26,9 @@ function renderAutocomplete(props: Partial<AutocompleteInputProps> = {}) {
 
 describe('App', () => {
   test('renders the `Autocomplete` component', async () => {
-    const { findByTestId } = renderAutocomplete();
+    renderAutocomplete();
 
-    const autocomplete = await findByTestId('autocomplete');
+    const autocomplete = await screen.findByTestId('autocomplete');
 
     expect(autocomplete).toContainHTML('data-testid="autocomplete-input"');
   });
@@ -50,10 +49,10 @@ describe('App', () => {
 
     renderAutocomplete({ options, onSelect, searchText: 'ruby' });
 
-    const input = await screen.getByTestId('autocomplete-input');
+    const input = screen.getByTestId('autocomplete-input');
     userEvent.click(input); // Click on the input expand the menu.
 
-    const menuButton = await screen.getByTestId('item-ruby');
+    const menuButton = screen.getByTestId('item-ruby');
     userEvent.click(menuButton);
 
     expect(onSelect).toBeCalledWith({
