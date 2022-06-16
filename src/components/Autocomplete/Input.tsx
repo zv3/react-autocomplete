@@ -1,16 +1,24 @@
-import {ChangeEventHandler, KeyboardEventHandler, MouseEventHandler} from "react";
+import { ChangeEventHandler, KeyboardEventHandler, MouseEventHandler } from 'react';
 
 interface InputProps {
-  id: string,
-  value: string,
-  expanded: boolean,
-  placeholder: string,
-  onChange: ChangeEventHandler,
-  onClick: MouseEventHandler,
-  onKeyDown: KeyboardEventHandler,
+  id: string;
+  value: string;
+  expanded: boolean;
+  placeholder: string;
+  onChange: ChangeEventHandler;
+  onClick: MouseEventHandler;
+  onKeyDown: KeyboardEventHandler;
 }
 
-function Input({ id, value, expanded: isExpanded, placeholder, onClick, onChange, onKeyDown }: InputProps) {
+function Input({
+  id,
+  value,
+  expanded: isExpanded,
+  placeholder,
+  onClick,
+  onChange,
+  onKeyDown,
+}: InputProps) {
   return (
     <div className="autocomplete__input-wrapper">
       <input
@@ -28,7 +36,7 @@ function Input({ id, value, expanded: isExpanded, placeholder, onClick, onChange
         onKeyDown={onKeyDown}
       ></input>
     </div>
-  )
+  );
 }
 
 export default Input;

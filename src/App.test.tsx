@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from '@testing-library/react';
-import Autocomplete, { AutocompleteInputProps } from "./components/Autocomplete/Autocomplete";
+import { render } from '@testing-library/react';
+import Autocomplete, { AutocompleteInputProps } from './components/Autocomplete/Autocomplete';
 import App from './App';
 
 function renderAutocomplete(props: Partial<AutocompleteInputProps> = {}) {
@@ -8,14 +8,16 @@ function renderAutocomplete(props: Partial<AutocompleteInputProps> = {}) {
     onChange: () => {},
     onSelect: () => {},
     placeholder: 'Default placeholder',
-    options: [{
-      label: 'Hey',
-      value: 'hey',
-    }],
+    options: [
+      {
+        label: 'Hey',
+        value: 'hey',
+      },
+    ],
     searchText: '',
   };
 
-  return render(<Autocomplete {...defaultProps} {...props}/>);
+  return render(<Autocomplete {...defaultProps} {...props} />);
 }
 
 describe('App', () => {
@@ -26,4 +28,4 @@ describe('App', () => {
 
     expect(autocomplete).toContainHTML('data-testid="autocomplete-input"');
   });
-})
+});

@@ -1,4 +1,4 @@
-import {capitalize} from "./utils";
+import { capitalize } from './utils';
 
 describe('capitalize()', () => {
   it('should capitalize the string passed in', () => {
@@ -9,4 +9,4 @@ describe('capitalize()', () => {
   it('should return an empty string if an empty string is passed in', () => {
     expect(capitalize('')).toEqual('');
   });
-})
+});

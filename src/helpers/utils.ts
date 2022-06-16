@@ -16,6 +16,4 @@ export function capitalize(contents: string) {
  *
  * @return {undefined}
  */
-export function noop(){
-
-}
+export function noop() {}

@@ -1,9 +1,9 @@
 import React from 'react';
-import Autocomplete from "./components/Autocomplete/Autocomplete";
-import {ChangeEvent, useState} from "react";
-import GithubAPI from "./api/Github";
-import {AutocompleteOption} from "./components/Autocomplete/types";
-import {capitalize} from "./helpers/utils";
+import Autocomplete from './components/Autocomplete/Autocomplete';
+import { ChangeEvent, useState } from 'react';
+import GithubAPI from './api/Github';
+import { AutocompleteOption } from './components/Autocomplete/types';
+import { capitalize } from './helpers/utils';
 import './App.css';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
   const loadData = async (query: string) => {
     const topics = await GithubAPI.searchTopics(query);
 
-    const newOptions: AutocompleteOption[] = topics.map(item => ({
+    const newOptions: AutocompleteOption[] = topics.map((item) => ({
       label: capitalize(item.name),
       value: item.name,
     }));
@@ -23,11 +23,11 @@ function App() {
 
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
-    loadData(e.target.value)
+    loadData(e.target.value);
   };
 
   const onSelectHandler = (option: AutocompleteOption) => {
-    setSearchText(option.label)
+    setSearchText(option.label);
   };
 
   return (

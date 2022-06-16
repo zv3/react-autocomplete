@@ -4,7 +4,7 @@
 }
 
 .autocomplete__input-wrapper {
-  background: rgba(0,0,0,.05);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 4px 4px 0 0;
   position: relative;
   padding: 0 12px;
@@ -37,11 +37,10 @@
   display: block;
   min-height: 38px;
   padding: 8px 16px;
-  transition: background-color .1s;
+  transition: background-color 0.1s;
   width: 100%;
 }
 
 .menu__item--focused {
   background: lightgrey;
 }
-

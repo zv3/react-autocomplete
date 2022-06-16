@@ -1,6 +1,6 @@
 export interface GithubTopic {
-  name: string,
-  display_name: string | null,
+  name: string;
+  display_name: string | null;
 }
 
 export interface SearchTopicsResponse {
@@ -10,5 +10,5 @@ export interface SearchTopicsResponse {
 }
 
 export interface GithubAPI {
-  searchTopics: (query: string) => Promise<GithubTopic[]>
+  searchTopics: (query: string) => Promise<GithubTopic[]>;
 }
