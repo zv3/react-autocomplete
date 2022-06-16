@@ -15,10 +15,12 @@ const API: GithubAPI = {
     params.set('q', query);
     params.set('per_page', '10');
 
+    const { REACT_APP_GITHUB_OAUTH_TOKEN: apiToken } = process.env;
+
     const response = await fetch(`${SEARCH_API_URL}?${params}`, {
       method: 'GET',
       headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_OAUTH_TOKEN}`,
+        ...(apiToken && { Authorization: `token ${apiToken}` }), // Optional, grants higher limits
       },
     });
 
