@@ -9,6 +9,7 @@ This is an Autocomplete input component built purely with function components an
 ## Future Work
 
 - Debounce the `keyDown` event to prevent re-rendering the list of items on every key stroke (due to highlighting). (Difficulty level: 1/5)
+- Refactorings; Introduce HOCs (e.g. to control the visibility of the menu, detect outside clicks). (Difficulty level: 1/5)
 - Add a small loading indicator to the right of the search input. (Difficulty level: 1/5)
 - Add an up/down dropdown icon to indicate the user can re-open the dropdown menu. (Difficulty level: 2/5)
 - Detect the position of the input relative to the scroll position to display the menu above or below the input. (Difficulty level: 3/5)
