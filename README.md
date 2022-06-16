@@ -1,6 +1,6 @@
 # Simple Autocomplete Component 
 
-This is an Autocomplete input component built purely with function components and hooks. 
+An Autocomplete input component built purely with React function components and hooks.
 
 [DEMO](https://zv3-autocomplete.netlify.app) -- This demo uses the topics search [API endpoint](https://docs.github.com/en/rest/search#search-topics) from Github to populate the list of suggested options as the user types in the search input.
 
