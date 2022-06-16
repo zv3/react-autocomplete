@@ -8,7 +8,7 @@ const API: GithubAPI = {
    * https://docs.github.com/en/rest/search#search-topics
    *
    * @param {String} query
-   * @return {Promise<Topic[]>}
+   * @return {Promise<GithubTopic[]>}
    */
   async searchTopics(query: string): Promise<GithubTopic[]> {
     const params = new URLSearchParams();
