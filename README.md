@@ -8,12 +8,12 @@ An Autocomplete input component built purely with React function components and 
 
 ## Future Work
 
-- Debounce the `keyDown` event to prevent re-rendering the list of items on every key stroke (due to highlighting). (Difficulty level: 1/5)
-- Refactorings; Introduce HOCs (e.g. to control the visibility of the menu, detect outside clicks). (Difficulty level: 1/5)
-- Add a small loading indicator to the right of the search input. (Difficulty level: 1/5)
-- Add an up/down dropdown icon to indicate the user can re-open the dropdown menu. (Difficulty level: 2/5)
-- Detect the position of the input relative to the scroll position to display the menu above or below the input. (Difficulty level: 3/5)
-- Add multi-selection by displaying selected values as chips. (Difficulty level: 5/5)
+- PERFORMANCE: Debounce the `keyDown` event to prevent re-rendering the list of items on every key stroke (due to highlighting). (Difficulty level: 1/5)
+- DX: Refactorings; Introduce HOCs (e.g. to control the visibility of the menu, detect outside clicks). (Difficulty level: 1/5)
+- UX: Add a small loading indicator to the right of the search input. (Difficulty level: 1/5)
+- UX: Add an up/down dropdown icon to indicate the user can re-open the dropdown menu. (Difficulty level: 2/5)
+- UX: Detect the position of the input relative to the scroll position to display the menu above or below the input. (Difficulty level: 3/5)
+- UX: Add multi-selection by displaying selected values as chips. (Difficulty level: 5/5)
 
 ## How to run -- available scripts
 
