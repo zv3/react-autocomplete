@@ -7,14 +7,13 @@ import {noop} from "../../helpers/utils";
 
 interface AutocompleteInput {
   options: AutocompleteOption[],
-  value: string,
   searchText: string,
   placeholder: string,
   onChange: (e: ChangeEvent<HTMLInputElement>) => void,
   onSelect: (option: AutocompleteOption) => void,
 }
 
-function Autocomplete({ onChange, options, value, searchText, placeholder, onSelect }: AutocompleteInput) {
+function Autocomplete({ onChange, options, searchText, placeholder, onSelect }: AutocompleteInput) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focusedOptionIndex, setFocusedOptionIndex] = useState<number>(-1);
   const canRenderMenu = searchText.length > 0 && isExpanded;

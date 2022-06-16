@@ -7,7 +7,6 @@ import {capitalize} from "./helpers/utils";
 import './App.css';
 
 function App() {
-  const [topic, setTopic] = useState('');
   const [menuOptions, setMenuOptions] = useState<AutocompleteOption[]>([]);
   const [searchText, setSearchText] = useState('');
 
@@ -28,7 +27,6 @@ function App() {
   };
 
   const onSelectHandler = (option: AutocompleteOption) => {
-    setTopic(option.label);
     setSearchText(option.label)
   };
 
@@ -38,7 +36,6 @@ function App() {
         onSelect={onSelectHandler}
         onChange={onChangeInputHandler}
         options={menuOptions}
-        value={topic}
         searchText={searchText}
         placeholder="Search GitHub topic..."
       />
