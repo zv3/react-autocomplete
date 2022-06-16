@@ -22,7 +22,6 @@ const MenuList = (props: MenuListProps) => {
     />
   ));
 
-  console.log(menuOptions);
   return (
     <div id={`autocomplete-menu-${id}`} className="menu" data-testid="autocomplete-menu">
       {menuOptions}

@@ -22,8 +22,13 @@ function App() {
   };
 
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value);
-    loadData(e.target.value);
+    const newSearchText = e.target.value;
+
+    setSearchText(newSearchText);
+
+    if (newSearchText) {
+      loadData(e.target.value);
+    }
   };
 
   const onSelectHandler = (option: AutocompleteOption) => {
