@@ -11,7 +11,8 @@ interface MenuItemProps {
 function MenuListItem({ item, highlightedText, onFocusChange, onClick }: MenuItemProps) {
   const { isFocused, option } = item;
 
-  const labelParts = option.label.split(highlightedText)
+  const regExp = new RegExp(highlightedText, 'gi');
+  const labelParts = option.label.split(regExp);
   const lastIndex = labelParts.length - 1;
   const buttonLabel = labelParts.map((part, currentIndex: number) => {
     return <Fragment>
