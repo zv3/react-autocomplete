@@ -1,6 +1,13 @@
 import SearchInput from './SearchInput';
 import MenuList from './MenuList';
-import { ChangeEvent, KeyboardEventHandler, MouseEventHandler, useId, useState } from 'react';
+import {
+  ChangeEvent,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  useEffect,
+  useId, useRef,
+  useState
+} from 'react';
 import { AutocompleteOption, MenuItem } from './types';
 import { noop } from '../../helpers/utils';
 import './Autocomplete.css';
@@ -105,8 +112,26 @@ function Autocomplete({
     setIsExpanded(!isExpanded); // Display/hide the menu when clicking on the input box.
   };
 
+  const onClickOutsideMenuHandler = () => setIsExpanded(false);
+
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (event: Event) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+        onClickOutsideMenuHandler();
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [wrapperRef]);
+
   return (
-    <div className="autocomplete" data-testid="autocomplete">
+    <div ref={wrapperRef} className="autocomplete" data-testid="autocomplete">
       <SearchInput
         id={id}
         value={searchText}

@@ -9,7 +9,9 @@ interface MenuListProps {
   onFocusChange: (item?: MenuItem) => void;
 }
 
-function MenuList({ id, items, highlightedText, onSelect, onFocusChange }: MenuListProps) {
+const MenuList = (props: MenuListProps) => {
+  const { id, items, highlightedText, onSelect, onFocusChange } = props;
+
   const menuOptions = items.map((item: MenuItem) => (
     <MenuListItem
       key={item.option.value}
@@ -20,11 +22,12 @@ function MenuList({ id, items, highlightedText, onSelect, onFocusChange }: MenuL
     />
   ));
 
+  console.log(menuOptions);
   return (
     <div id={`autocomplete-menu-${id}`} className="menu" data-testid="autocomplete-menu">
       {menuOptions}
     </div>
   );
-}
+};
 
 export default MenuList;
