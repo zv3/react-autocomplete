@@ -8,12 +8,10 @@ import './App.css';
 
 function App() {
   const [topic, setTopic] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
   const [menuOptions, setMenuOptions] = useState<AutocompleteOption[]>([]);
   const [searchText, setSearchText] = useState('');
 
   const loadData = async (query: string) => {
-    setIsLoading(true);
     const topics = await GithubAPI.searchTopics(query);
 
     const newOptions: AutocompleteOption[] = topics.map(item => ({
@@ -22,7 +20,6 @@ function App() {
     }));
 
     setMenuOptions(newOptions);
-    setIsLoading(false);
   };
 
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -44,7 +41,6 @@ function App() {
         value={topic}
         searchText={searchText}
         placeholder="Search GitHub topic..."
-        loading={isLoading}
       />
     </div>
   );
