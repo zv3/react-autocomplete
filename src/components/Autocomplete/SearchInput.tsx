@@ -10,7 +10,7 @@ interface InputProps {
   onKeyDown: KeyboardEventHandler;
 }
 
-function Input({
+function SearchInput({
   id,
   value,
   expanded: isExpanded,
@@ -39,4 +39,4 @@ function Input({
   );
 }
 
-export default Input;
+export default SearchInput;

@@ -1,4 +1,4 @@
-import Input from './Input';
+import SearchInput from './SearchInput';
 import MenuList from './MenuList';
 import { ChangeEvent, KeyboardEventHandler, MouseEventHandler, useId, useState } from 'react';
 import { AutocompleteOption, MenuItem } from './types';
@@ -107,7 +107,7 @@ function Autocomplete({
 
   return (
     <div className="autocomplete" data-testid="autocomplete">
-      <Input
+      <SearchInput
         id={id}
         value={searchText}
         expanded={isExpanded}
