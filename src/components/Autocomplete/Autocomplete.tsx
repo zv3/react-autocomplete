@@ -5,8 +5,9 @@ import {
   KeyboardEventHandler,
   MouseEventHandler,
   useEffect,
-  useId, useRef,
-  useState
+  useId,
+  useRef,
+  useState,
 } from 'react';
 import { AutocompleteOption, MenuItem } from './types';
 import { noop } from '../../helpers/utils';
