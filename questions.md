@@ -31,13 +31,13 @@ One case where I could think it might break the app is when a container div is r
 
     ```jsx
     const withKeyLogger = (Component) {
-        return (props) => {
-           const onKeyDownHandler = (event) => {
-              console.log('Key Pressed:', event.key);
-           }
-           
-           <Component {...props} onKeyDown={onKeyDownHandler} />;
+      return (props) => {
+        const onKeyDownHandler = (event) => {
+          console.log('Key Pressed:', event.key);
         }
+           
+        <Component {...props} onKeyDown={onKeyDownHandler} />;
+      }
     }
     ```
 
@@ -45,33 +45,32 @@ One case where I could think it might break the app is when a container div is r
 
     ```jsx
     function withOutsideClickDetection(Component) {
-        class WrapperComponent extends React.Component {
-            constructor(props) {
-                super(props);
+      class WrapperComponent extends React.Component {
+        constructor(props) {
+          super(props);
     
-                this.onClickHandler = this.onClickHandler.bind(this);
-            }
-    
-            onClickHandler(event) {
-                this.wrappedCompInstance.onOutOutsideClick();
-            }
-    
-            componentDidMount() {
-                window.addEventListener('click', this.onClickHandler);
-            }
-    
-            componentWillUnmount() {
-                window.removeEventListener('click', this.onClickHandler);
-            }
-    
-            render() {
-                return <Component ref={ ... } />
-            }
+          this.onClickHandler = this.onClickHandler.bind(this);
         }
     
-        return WrapperComponent;
-    }
+        onClickHandler(event) {
+          this.wrappedCompInstance.onOutOutsideClick();
+        }
     
+        componentDidMount() {
+          window.addEventListener('click', this.onClickHandler);
+        }
+    
+        componentWillUnmount() {
+          window.removeEventListener('click', this.onClickHandler);
+        }
+    
+        render() {
+          return <Component ref={ ... } />
+        }
+      }
+    
+      return WrapperComponent;
+   } 
     ```
 
 
@@ -111,9 +110,9 @@ Two arguments; the first one is the function returning the new state while the s
     ```jsx
     // Before:
     class Hey extends React.Component {
-        constructor() { ... }
+      constructor() { ... }
     
-        onClick() { ... }
+      onClick() { ... }
     }
     
     // After:
@@ -127,14 +126,14 @@ Two arguments; the first one is the function returning the new state while the s
     ```jsx
     // Before:
     class Hey extends React.Component {
-        onClick() { ... }
+      onClick() { ... }
     }
     
     // After:
     function Hey(props) {
-        const onClickHandler = (e) => { ... }
+      const onClickHandler = (e) => { ... }
     
-        function onClickHandler(e) { ... } // Alternative
+      function onClickHandler(e) { ... } // Alternative
     }
     ```
 
@@ -144,18 +143,18 @@ Two arguments; the first one is the function returning the new state while the s
     ```jsx
     // Before:
     class Hey extends React.Component {
-        onClickHandler() { ... }
+      onClickHandler() { ... }
     
-        render() {
-            return <button onClick={this.onClickHandler}>...</button>
-        }
+      render() {
+        return <button onClick={this.onClickHandler}>...</button>
+      }
     }
     
     // After:
     function Hey(props) {
-        const onClickHandler = (e) => { ... }
+      const onClickHandler = (e) => { ... }
     
-        return <button onClick={onClickHandler}>...</button>
+      return <button onClick={onClickHandler}>...</button>
     }
     ```
 
@@ -167,9 +166,9 @@ Two arguments; the first one is the function returning the new state while the s
 
     ```jsx
     render() {
-        const styles = { color: 'red', border: 'none' }
+      const styles = { color: 'red', border: 'none' }
     
-        return <div style={styles}>...</div>
+      return <div style={styles}>...</div>
     }
     ```
 
@@ -177,7 +176,7 @@ Two arguments; the first one is the function returning the new state while the s
 
     ```jsx
     render() {
-        return <div style={{ color: 'red', border: 'none' }}>...</div>
+      return <div style={{ color: 'red', border: 'none' }}>...</div>
     }
     ```
 
@@ -186,8 +185,8 @@ Two arguments; the first one is the function returning the new state while the s
 
     ```css
     .my-selector {
-        color: red;
-        border: none;
+      color: red;
+      border: none;
     }
     ```
 
@@ -195,7 +194,7 @@ Two arguments; the first one is the function returning the new state while the s
     import css from './stylesheet.css';
     
     render() {
-        return <div className={css.MySelector}>...</div>
+      return <div className={css.MySelector}>...</div>
     }
     ```
 
