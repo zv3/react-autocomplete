@@ -2,8 +2,8 @@ import Input from "./Input";
 import MenuList from "./MenuList";
 import {ChangeEvent, KeyboardEventHandler, MouseEventHandler, useId, useState} from "react";
 import {AutocompleteOption, MenuItem} from "./types";
-import './styles.css';
 import {noop} from "../../helpers/utils";
+import './Autocomplete.css';
 
 export interface AutocompleteInputProps {
   options: AutocompleteOption[],
