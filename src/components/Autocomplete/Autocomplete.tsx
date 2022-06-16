@@ -5,7 +5,7 @@ import {AutocompleteOption, MenuItem} from "./types";
 import './styles.css';
 import {noop} from "../../helpers/utils";
 
-interface AutocompleteInput {
+export interface AutocompleteInputProps {
   options: AutocompleteOption[],
   searchText: string,
   placeholder: string,
@@ -19,7 +19,7 @@ enum KeyboardEventKey {
   Enter = 'Enter',
 }
 
-function Autocomplete({ onChange, options, searchText, placeholder, onSelect }: AutocompleteInput) {
+function Autocomplete({ onChange, options, searchText, placeholder, onSelect }: AutocompleteInputProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [focusedOptionIndex, setFocusedOptionIndex] = useState<number>(-1);
   const canRenderMenu = searchText.length > 0 && isExpanded;
