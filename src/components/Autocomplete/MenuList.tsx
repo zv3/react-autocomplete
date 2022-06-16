@@ -12,6 +12,7 @@ interface MenuListProps {
 function MenuList({ id, items, highlightedText, onSelect, onFocusChange }: MenuListProps) {
   const menuOptions = items.map((item: MenuItem) => (
     <MenuListItem
+      key={item.option.value}
       item={item}
       highlightedText={highlightedText}
       onClick={onSelect}
@@ -20,7 +21,7 @@ function MenuList({ id, items, highlightedText, onSelect, onFocusChange }: MenuL
   ));
 
   return (
-    <div id={`autocomplete-menu-${id}`} className="menu">
+    <div id={`autocomplete-menu-${id}`} className="menu" data-testid="autocomplete-menu">
       {menuOptions}
     </div>
   );

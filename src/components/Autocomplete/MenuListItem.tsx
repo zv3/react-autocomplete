@@ -34,6 +34,7 @@ function MenuListItem({ item, highlightedText, onFocusChange, onClick }: MenuIte
   return (
     <button
       className={classNames}
+      data-testid={`item-${item.option.value}`}
       onClick={onClickHandler}
       onMouseEnter={onMouseEnterHandler}
       onMouseLeave={onMouseLeaveHandler}
